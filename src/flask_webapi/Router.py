@@ -1,8 +1,8 @@
 from flask import Blueprint
-from .WebApi import MvcApp
+from . import WebApi
 
 class Router:
-    def __init__(self, app: MvcApp, controller_path:str):
+    def __init__(self, app: WebApi, controller_path:str):
         self.controller_name = controller_path.split('.')[-1]
         self.blueprint = Blueprint(f'{self.controller_name}Controller', controller_path)
         self.handler_factory = app.action_handler()
