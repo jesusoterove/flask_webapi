@@ -7,7 +7,8 @@ requirements = [
 setup(
     name='Flask-WebApi',
     version='1.0.0',
-    packages=find_packages(),
+    packages=["flask_webapi"],
+    package_dir={"": "flask_webapi"},
     install_requires=requirements,
     author='Jesus Otero',
     author_email='jesusoterove@gmail.com',
