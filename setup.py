@@ -4,11 +4,15 @@ requirements = [
     'flask==3.1.0',
 ]
 
+meta = {}
+with open("./src/flask_webapi/version.py", encoding="utf-8") as f:
+    exec(f.read(), meta)
+
 setup(
     name='Flask-WebApi',
-    version='1.0.0',
-    packages=["flask_webapi"],
-    package_dir={"": "flask_webapi"},
+    version=meta['__version__'],
+    packages=find_packages(where=["src"]),
+    # package_dir={"": "src"},
     install_requires=requirements,
     author='Jesus Otero',
     author_email='jesusoterove@gmail.com',
