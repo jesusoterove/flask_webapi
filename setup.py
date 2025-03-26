@@ -5,7 +5,7 @@ requirements = [
 ]
 
 meta = {}
-with open("./src/flask_webapi/version.py", encoding="utf-8") as f:
+with open("./src/flask_webapi/__version__.py", encoding="utf-8") as f:
     exec(f.read(), meta)
 
 setup(
