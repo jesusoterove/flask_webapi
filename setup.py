@@ -1,17 +1,29 @@
 from setuptools import setup, find_packages
+from os import path
 
 requirements = [
     'flask==3.1.0',
 ]
 
 meta = {}
-with open("./src/flask_webapi/__version__.py", encoding="utf-8") as f:
+version_file = path.join(
+    path.dirname(__file__),
+    'src/flask_webapi',
+    '__version__.py'
+)
+
+with open(version_file, encoding="utf-8") as f:
     exec(f.read(), meta)
+
+packages = find_packages(where=["src"])
+
+print("Flask-WebApi Meta: ", meta)
+print("Flask-WebApi Packages: ", packages)
 
 setup(
     name='Flask-WebApi',
     version=meta['__version__'],
-    packages=find_packages(where=["src"]),
+    packages=packages,
     # package_dir={"": "src"},
     install_requires=requirements,
     author='Jesus Otero',

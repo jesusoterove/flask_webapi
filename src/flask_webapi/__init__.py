@@ -1,4 +1,6 @@
-from .WebApi import WebApi as Api
+from . import WebApi
+from . import Router
 
 #Export the Api class
-WebApi = Api
+
+__all__ = ('WebApi', 'Router')
